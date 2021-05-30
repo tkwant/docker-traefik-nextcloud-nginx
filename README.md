@@ -13,7 +13,7 @@ docker compose file for traefik, nextcloud and nginx
 Adjust the the .env files in nextcloud, traefik and  nginx
 For TRAEFIK_DASHBOARD_AUTH you can generate the authentification with the following commands: 
 ```
-apt-get install apache2-utils`
+apt-get install apache2-utils
 echo $(htpasswd -nb user password) | sed -e s/\\$/\\$\\$/g
 ```
 **Next Steps**
