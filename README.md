@@ -18,7 +18,7 @@ echo $(htpasswd -nb user password) | sed -e s/\\$/\\$\\$/g
 ```
 **Next Steps**
 1. ```docker network create proxy```
-2. ```bash startAll.sh``` 
+2. ```bash startall.sh``` 
 
 ### Nextcloud
 After the nextcloud url has been called, nextcloud must be configured like this
