@@ -11,11 +11,14 @@ docker compose files for traefik, nextcloud and nginx
 **ENV**
 
 Adjust the the .env files in nextcloud, traefik and  nginx
-For TRAEFIK_DASHBOARD_AUTH you can generate the authentification with the following commands: 
+
+in line 26 in traefik/volume enter your auth string (replace USER:AUTH). You can generate the authentification string with this commands:
 ```
 apt-get install apache2-utils
 echo $(htpasswd -nb user password) | sed -e s/\\$/\\$\\$/g
 ```
+change the emailadress in traefik/volume/traefik.yaml file (line 20)
+
 **Next Steps**
 1. ```docker network create proxy```
 2. ```bash startall.sh``` 
