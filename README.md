@@ -9,6 +9,7 @@ docker compose file for traefik, nextcloud and nginx
 ### Getting started
 
 **ENV**
+
 Adjust the the .env files in nextcloud, traefik and  nginx
 For TRAEFIK_DASHBOARD_AUTH you can generate the authentification with the following commands: 
 ```
