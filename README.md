@@ -22,6 +22,6 @@ echo $(htpasswd -nb user password) | sed -e s/\\$/\\$\\$/g
 ### Nextcloud
 After the nextcloud url has been called, nextcloud must be configured like this
 <p align="center">
-    <img src="/nextcloud.png" width="100%">
+    <img src="/nextcloud.png" width="50%">
     <br/><br/>
 </p>
