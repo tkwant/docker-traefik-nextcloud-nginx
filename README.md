@@ -1,5 +1,5 @@
 # docker-traefik-nextcloud-nginx
-docker compose file for traefik, nextcloud and nginx
+docker compose files for traefik, nextcloud and nginx
 
 #### Docker versions in test environment
 
