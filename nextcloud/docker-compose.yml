@@ -41,11 +41,11 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.nextcloud-app.entrypoints=http"
-      - "traefik.http.routers.nextcloud-app.rule=Host(`${NEXTCLOUD_DOMAIN}`)"
+      - "traefik.http.routers.nextcloud-app.rule=Host(`${URL}`)"
       - "traefik.http.middlewares.nextcloud-app-https-redirect.redirectscheme.scheme=https"
       - "traefik.http.routers.nextcloud-app.middlewares=nextcloud-app-https-redirect"
       - "traefik.http.routers.nextcloud-app-secure.entrypoints=https"
-      - "traefik.http.routers.nextcloud-app-secure.rule=Host(`${NEXTCLOUD_DOMAIN}`)"
+      - "traefik.http.routers.nextcloud-app-secure.rule=Host(`${URL}`)"
       - "traefik.http.routers.nextcloud-app-secure.tls=true"
       - "traefik.http.routers.nextcloud-app-secure.tls.certresolver=http"
       - "traefik.http.routers.nextcloud-app-secure.service=nextcloud-app"

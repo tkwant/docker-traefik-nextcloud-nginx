@@ -10,11 +10,11 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.website.entrypoints=http"
-      - "traefik.http.routers.website.rule=Host(`${DOMAIN}`)"
+      - "traefik.http.routers.website.rule=Host(`${URL}`)"
       - "traefik.http.middlewares.website-https-redirect.redirectscheme.scheme=https"
       - "traefik.http.routers.website.middlewares=website-https-redirect"
       - "traefik.http.routers.website-secure.entrypoints=https"
-      - "traefik.http.routers.website-secure.rule=Host(`${DOMAIN}`)"
+      - "traefik.http.routers.website-secure.rule=Host(`${URL}`)"
       - "traefik.http.routers.website-secure.tls=true"
       - "traefik.http.routers.website-secure.tls.certresolver=http"
       - "traefik.http.routers.website-secure.service=website"

@@ -1,0 +1,34 @@
+version: '3'
+ 
+services:
+  nginx:
+    restart: always
+    container_name: dozzle
+    image: amir20/dozzle:v3.7.0
+    environment:
+      - DOZZLE_ADDR=:3000
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.dozzle.entrypoints=http"
+      - "traefik.http.routers.dozzle.rule=Host(`${URL}`)"
+      - "traefik.http.middlewares.dozzle-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.dozzle.middlewares=dozzle-https-redirect"
+      - "traefik.http.routers.dozzle-secure.entrypoints=https"
+      - "traefik.http.routers.dozzle-secure.rule=Host(`${URL}`)"
+      - "traefik.http.routers.dozzle-secure.tls=true"
+      - "traefik.http.routers.dozzle-secure.tls.certresolver=http"
+      - "traefik.http.routers.dozzle-secure.service=dozzle"
+      - "traefik.http.services.dozzle.loadbalancer.server.port=3000"
+      - "traefik.docker.network=proxy"
+      - "traefik.http.middlewares.dozzle-auth.basicauth.users=user:pass"
+      - "traefik.http.routers.dozzle-secure.middlewares=secHeaders@file,dozzle-auth"
+    networks:
+     - "proxy"
+networks:
+  proxy:
+    external: true
+
+
+
