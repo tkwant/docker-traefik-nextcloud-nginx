@@ -35,13 +35,17 @@ if you get permission denied error after clicking "finish installation" you have
 ### Adding containers
 You can use the nginx docker-compose.yaml file as a template. 
 You have to adjust the labels for the new container in the docker-compose.yml file. (see example in dozzle/docker-compose.yml)
+
 For demonstration purpose I added dozzle. With dozzle you can view your container logs on a webpage.
+
 I edited the following labels
 <p align="center">
     <img src="/add_containers.png" width="50%">
     <br/><br/>
 </p>
+
 I also added username and password authentifcation to the labels with the following two lines (the same as the traefik container)
+
 ```
 - "traefik.http.middlewares.dozzle-auth.basicauth.users=user:pass"
 - "traefik.http.routers.dozzle-secure.middlewares=secHeaders@file,dozzle-auth"
