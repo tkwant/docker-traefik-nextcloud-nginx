@@ -44,10 +44,10 @@ I edited the following labels
     <br/><br/>
 </p>
 
-I also added username and password authentifcation to the labels with the following two lines (the same as the traefik container)
+I also added basic authentifcation to the labels with the following two lines. The same as the traefik container, only with replacing traefik with dozzle and changing USER:PASS authentification string.
 
 ```
-- "traefik.http.middlewares.dozzle-auth.basicauth.users=user:pass"
+- "traefik.http.middlewares.dozzle-auth.basicauth.users=USER:PASS"
 - "traefik.http.routers.dozzle-secure.middlewares=secHeaders@file,dozzle-auth"
 ```
 
