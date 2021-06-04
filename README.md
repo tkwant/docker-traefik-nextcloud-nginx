@@ -10,16 +10,16 @@ docker compose files for traefik, nextcloud and nginx
 
 **ENV**
 
-Adjust the the .env files in nextcloud, traefik and  nginx
+Adjust the the .env files in nextcloud, traefik, nginx and dozzle
 
-in line 26 in traefik/volume enter your auth string (replace USER:AUTH). You can generate the authentification string with this commands:
+in line 26 in traefik/docker-compose.yml enter your basic auth string (replace USER:AUTH). You can generate the authentification string with this commands:
 ```
 apt-get install apache2-utils
 echo $(htpasswd -nb user password) | sed -e s/\\$/\\$\\$/g
 ```
 
 **Next Steps**
-1. change the emailadress in traefik/volume/traefik.yaml file (line 20)
+1. change the emailadress in traefik/volume/traefik.yml file (line 20)
 2. ```docker network create proxy```
 3. ```bash startall.sh``` 
 
