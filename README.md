@@ -55,3 +55,8 @@ In the .env file I changed the url.
 
 ### Contribution
 All contributions are welcome.
+
+
+### Infrastructure model
+
+![Infrastructure model](.infragenie/infrastructure_model.png)
